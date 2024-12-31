@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const Navbar = () => {
@@ -19,6 +20,7 @@ const Navbar = () => {
             d="M4 6h16M4 12h8m-8 6h16" />
         </svg>
       </div>
+      {/* mobile menu */}
       <ul
         tabIndex={0}
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
@@ -33,17 +35,22 @@ const Navbar = () => {
         <li><a>Item 3</a></li>
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">daisyUI</a>
+    <Link href="/" className="btn btn-ghost text-xl">daisyUI</Link>
   </div>
   <div className="navbar-center hidden lg:flex">
+    {/* large display */}
     <ul className="menu menu-horizontal px-1">
-      <li><a>Item 1</a></li>
+      <li><Link href='/about'>About</Link></li>
+      <li><Link href='/contact'>Contact</Link></li>
       <li>
         <details>
-          <summary>Parent</summary>
+        <summary>
+
+          <Link href='/dashboard'>Dashboard</Link>
+        </summary>
           <ul className="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
+            <li><Link href="/dashboard/admin">Admin</Link></li>
+            <li><Link href="/dashboard/user">User</Link></li>
           </ul>
         </details>
       </li>
